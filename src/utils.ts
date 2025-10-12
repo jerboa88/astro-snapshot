@@ -26,7 +26,7 @@ export function getFormat(path: string): Format {
 
 	// No dot, or dot is part of a directory (e.g., ".config/file")
 	if (lastDot <= lastSlash) {
-		throw new Error('TODO');
+		throw new Error('No file extension found');
 	}
 
 	const extension = path.slice(lastDot + 1);
