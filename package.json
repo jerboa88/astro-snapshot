@@ -1,0 +1,61 @@
+{
+	"name": "astro-snapshot",
+	"version": "1.0.0",
+	"description": "Astro integration for generating screenshots of pages using Puppeteer.",
+	"keywords": [
+		"withastro",
+		"astro",
+		"astro-integration",
+		"screenshot",
+		"puppeteer",
+		"social-images",
+		"og-images",
+		"preview",
+		"image",
+		"images",
+		"seo"
+	],
+	"author": "John Goodliff (https://johng.io)",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsc --watch",
+		"prepublishOnly": "npm run build",
+		"format:check": "prettier --check .",
+		"format:write": "prettier --write .",
+		"upgrade-interactive": "pnpx npm-check-updates -i --format group -p pnpm"
+	},
+	"peerDependencies": {
+		"astro": "^5.0.0"
+	},
+	"dependencies": {
+		"astro": "^5.14.1",
+		"puppeteer": "^24.23.0"
+	},
+	"devDependencies": {
+		"@types/node": "^24.7.0",
+		"prettier": "^3.6.2",
+		"typescript": "^5.9.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jerboa88/astro-snapshot.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jerboa88/astro-snapshot/issues"
+	},
+	"homepage": "https://github.com/jerboa88/astro-snapshot#readme",
+	"license": "MIT"
+}
