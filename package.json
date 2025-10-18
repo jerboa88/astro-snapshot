@@ -35,17 +35,22 @@
 		"prepublishOnly": "npm run build",
 		"format:check": "prettier --check .",
 		"format:write": "prettier --write .",
-		"upgrade-interactive": "pnpx npm-check-updates -i --format group -p pnpm"
+		"upgrade-interactive": "bunx ncu -i --format group"
 	},
+	"trustedDependencies": [
+		"puppeteer"
+	],
 	"peerDependencies": {
 		"astro": "^5.0.0"
 	},
 	"dependencies": {
 		"astro": "^5.14.1",
-		"puppeteer": "^24.23.0"
+		"puppeteer": "^24.25.0"
 	},
 	"devDependencies": {
+		"@types/bun": "latest",
 		"@types/node": "^24.7.0",
+		"npm-check-updates": "^19.1.1",
 		"prettier": "^3.6.2",
 		"typescript": "^5.9.3"
 	},
@@ -57,5 +62,6 @@
 		"url": "https://github.com/jerboa88/astro-snapshot/issues"
 	},
 	"homepage": "https://github.com/jerboa88/astro-snapshot#readme",
-	"license": "MIT"
+	"license": "MIT",
+	"private": true
 }
