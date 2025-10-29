@@ -33,6 +33,7 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
+		"prepare": "npm run build",
 		"prepack": "npm run build",
 		"typecheck": "tsc --noEmit",
 		"format:check": "prettier --check .",
