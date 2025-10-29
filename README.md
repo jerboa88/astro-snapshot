@@ -44,7 +44,7 @@ This integration was inspired by a similar plugin I wrote for [Gatsby] called [G
 
 ### Use cases
 
-- **🏞️ Social images**: Use your existing front-end components to generate Open Graph images and/or Twitter cards for your blog posts or other content
+- **🏞️ Social images**: Use your existing front-end components to generate [Open Graph] images and/or Twitter cards for your blog posts or other content
 - **Content previews**: Generate screenshots of your website for use in documentation, marketing materials
 - **🖼️ Favicons**: Dynamically generate favicons for your website
 
@@ -78,39 +78,68 @@ After the Astro build completes, this plugin uses [Puppeteer] to render the page
 > bun add puppeteer
 > ```
 
-### Automatic
+<!-- Remove this note when the package is published to NPM and JSR -->
+> [!NOTE]
+> The `astro add` command is not currently supported because the package is not published, but we hope to do this soon.
+
+<!-- Uncomment this section when the package is published to NPM and JSR -->
+<!-- ### Automatic
 
 We can use the Astro CLI to install the integration automatically:
+
 ```bash
 npx astro add astro-snapshot
 ```
+
 ```bash
 pnpm astro add astro-snapshot
 ```
+
 ```bash
 yarn astro add astro-snapshot
 ```
+
 ```bash
 bunx astro add astro-snapshot
 ```
 
-If you run into any issues, try the manual installation steps below.
+If you run into any issues, try the manual installation steps below. -->
 
 ### Manual
 
-First, install the `astro-snapshot` package using your package manager.
+First, install the `astro-snapshot` package using your preferred package manager.
 
-```bash
+<!-- Uncomment this section when the package is published to NPM and JSR -->
+<!-- ```bash
 npm install astro-snapshot
 ```
+
 ```bash
 pnpm add astro-snapshot
 ```
+
 ```bash
 yarn add astro-snapshot
 ```
+
 ```bash
 bun add astro-snapshot
+``` -->
+
+```bash
+npm install github:jerboa88/astro-snapshot
+```
+
+```bash
+pnpm add github:jerboa88/astro-snapshot
+```
+
+```bash
+yarn add github:jerboa88/astro-snapshot
+```
+
+```bash
+bun add github:jerboa88/astro-snapshot
 ```
 
 Then, apply the integration to your `astro.config.*` file using the integrations property:
@@ -469,8 +498,9 @@ We are not affiliated with or endorsed by Astro.
 
 ## 🖇️ Related
 
-- **[Gatsby Plugin: Component to Image]**: A sister image generation plugin for the Gatsby framework.
-- **[astro-selfie]**: A similar integration that automatically generates images for every page.
+- **👤 [Gatsby Plugin: Component to Image]**: A sister image generation plugin for the Gatsby framework.
+- **👤 [Tally]**: A free online tool to count the number of characters, words, paragraphs, and lines in your text. Tally uses this integration to generate social images.
+- **🌐 [astro-selfie]**: A similar integration that automatically generates images for every page.
 
 ## 💕 Funding
 
@@ -490,7 +520,7 @@ I appreciate the support!
 [Gatsby]: https://www.gatsbyjs.com/
 [astro-selfie]: https://github.com/vadimdemedes/astro-selfie
 [Open Graph]: https://ogp.me/
-[Typescript]: https://www.typescriptlang.org/
 [Satori]: https://github.com/vercel/satori
 [Puppeteer]: https://pptr.dev/
 [Gatsby Plugin: Component to Image]: https://github.com/jerboa88/gatsby-plugin-component-to-image
+[Tally]: https://tally.johng.io/r/astro-snapshot
