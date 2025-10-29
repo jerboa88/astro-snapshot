@@ -107,6 +107,9 @@ If you run into any issues, try the manual installation steps below. -->
 
 ### Manual
 
+> [!TIP]
+> When installing from GitHub, your package manager may not run the `prepare` script that builds the package. If you run into issues, add `astro-snapshot` to your package maanger's allow list.
+
 First, install the `astro-snapshot` package using your preferred package manager.
 
 <!-- Uncomment this section when the package is published to NPM and JSR -->
