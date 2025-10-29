@@ -46,12 +46,12 @@
 		"astro": "^5.0.0"
 	},
 	"dependencies": {
-		"astro": "^5.15.2",
 		"puppeteer": "^24.26.1"
 	},
 	"devDependencies": {
 		"@types/bun": "latest",
 		"@types/node": "^24.9.2",
+		"astro": "^5.15.2",
 		"npm-check-updates": "^19.1.2",
 		"prettier": "^3.6.2",
 		"typescript": "^5.9.3"
@@ -64,6 +64,5 @@
 		"url": "https://github.com/jerboa88/astro-snapshot/issues"
 	},
 	"homepage": "https://github.com/jerboa88/astro-snapshot#readme",
-	"license": "MIT",
-	"private": true
+	"license": "MIT"
 }
