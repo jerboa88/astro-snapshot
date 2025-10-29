@@ -22,20 +22,22 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js"
-		}
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
 	},
 	"files": [
-		"dist",
-		"README.md"
+		"src",
+		"dist"
 	],
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
-		"prepublishOnly": "npm run build",
+		"prepack": "npm run build",
+		"typecheck": "tsc --noEmit",
 		"format:check": "prettier --check .",
 		"format:write": "prettier --write .",
-		"upgrade-interactive": "bunx ncu -i --format group"
+		"upgrade-interactive": "bun npm-check-updates -i --format group"
 	},
 	"trustedDependencies": [
 		"puppeteer"
