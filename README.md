@@ -495,14 +495,24 @@ Contributions, issues, and forks are welcome. See [CONTRIBUTING.md](CONTRIBUTING
 
 ## 🧾 License
 
+Copyright © 2025 [John Goodliff](https://johng.io/r/astro-snapshot).
+
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 We are not affiliated with or endorsed by Astro.
 
 ## 🖇️ Related
 
-- **👤 [Gatsby Plugin: Component to Image]**: A sister image generation plugin for the Gatsby framework.
-- **👤 [Tally]**: A free online tool to count the number of characters, words, paragraphs, and lines in your text. Tally uses this integration to generate social images.
+### Recommended
+
+- **👤 [Gatsby Plugin: Component to Image]**: A similar image generation plugin for the Gatsby framework.
+
+### Used By
+
+- **👤 [Tally]**: A free online tool to count the number of characters, words, paragraphs, and lines in your text. **Tally** uses this integration to generate social images.
+
+### Alternatives
+
 - **🌐 [astro-selfie]**: A similar integration that automatically generates images for every page.
 
 ## 💕 Funding
