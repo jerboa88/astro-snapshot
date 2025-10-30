@@ -8,14 +8,45 @@
 		"astro-integration",
 		"screenshot",
 		"puppeteer",
+		"puppeteer-screenshot",
+		"social-preview",
 		"social-images",
 		"og-images",
 		"preview",
 		"image",
 		"images",
-		"seo"
+		"seo",
+		"typescript"
 	],
-	"author": "John Goodliff (https://johng.io)",
+	"license": "MIT",
+	"author": {
+		"name": "John Goodliff",
+		"url": "https://johng.io"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jerboa88/astro-snapshot.git"
+	},
+	"homepage": "https://johng.io/p/astro-snapshot",
+	"bugs": "https://github.com/jerboa88/astro-snapshot/issues",
+	"funding": [
+		{
+			"type": "individual",
+			"url": "https://johng.io/funding"
+		},
+		{
+			"type": "GitHub Sponsors",
+			"url": "https://github.com/sponsors/jerboa88"
+		},
+		{
+			"type": "Patreon",
+			"url": "https://patreon.com/jerboa88"
+		},
+		{
+			"type": "Brave Creators",
+			"url": "https://publishers.basicattentiontoken.org/en/c/johng"
+		}
+	],
 	"type": "module",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -56,13 +87,4 @@
 		"prettier": "^3.6.2",
 		"typescript": "^5.9.3"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/jerboa88/astro-snapshot.git"
-	},
-	"bugs": {
-		"url": "https://github.com/jerboa88/astro-snapshot/issues"
-	},
-	"homepage": "https://github.com/jerboa88/astro-snapshot#readme",
-	"license": "MIT"
 }
