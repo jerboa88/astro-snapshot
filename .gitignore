@@ -1,52 +1,34 @@
-# Dependencies
-node_modules/
-.pnpm-store/
+# dependencies (bun install)
+node_modules
 
-# Build output
-dist/
+# output
+out
+dist
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# caches
+.eslintcache
+.cache
 *.tsbuildinfo
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
 .DS_Store
-
-# Environment
-.env
-.env.local
-.env.*.local
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Testing
-coverage/
-.nyc_output/
-
-# Package files
-*.tgz
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# Temporary files
-.tmp/
-temp/
-tmp/
-
-# Screenshots (if testing locally)
-public/og/
-public/social/
-public/screenshots/
-public/previews/
-public/thumbnails/
-
-# Semantic release
-.semantic-release/
