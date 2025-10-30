@@ -1,0 +1,12 @@
+{
+	"$schema": "https://johng.io/schema/project-metadata.json",
+	"name": "astro-snapshot",
+	"background": "An Astro integration for generating screenshots of your pages automatically at build time.",
+	"category": "Plugin",
+	"subcategory": "Astro",
+	"schema": {
+		"type": "Software",
+		"applicationCategory": "Developer",
+		"operatingSystem": "Any"
+	}
+}
