@@ -1,6 +1,6 @@
 {
 	"$schema": "https://jsr.io/schema/config-file.v1.json",
-	"name": "@jerboa88/astro-snapshot",
+	"name": "@twocaretcat/astro-snapshot",
 	"version": "0.1.0",
 	"license": "MIT",
 	"exports": {

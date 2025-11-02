@@ -25,10 +25,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/jerboa88/astro-snapshot.git"
+		"url": "https://github.com/twocaretcat/astro-snapshot.git"
 	},
 	"homepage": "https://johng.io/p/astro-snapshot",
-	"bugs": "https://github.com/jerboa88/astro-snapshot/issues",
+	"bugs": "https://github.com/twocaretcat/astro-snapshot/issues",
 	"funding": [
 		{
 			"type": "individual",
@@ -36,11 +36,11 @@
 		},
 		{
 			"type": "GitHub Sponsors",
-			"url": "https://github.com/sponsors/jerboa88"
+			"url": "https://github.com/sponsors/twocaretcat"
 		},
 		{
 			"type": "Patreon",
-			"url": "https://patreon.com/jerboa88"
+			"url": "https://patreon.com/twocaretcat"
 		},
 		{
 			"type": "Brave Creators",

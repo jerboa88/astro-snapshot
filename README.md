@@ -3,10 +3,10 @@
 <h1 class="projectName">📸 Astro Snapshot</h1>
 <p class="projectBadges">
   <img src="https://johng.io/badges/category/Plugin.svg" alt="Project category" title="Project category">
-  <img src="https://img.shields.io/github/languages/top/jerboa88/astro-snapshot.svg" alt="Language" title="Language">
+  <img src="https://img.shields.io/github/languages/top/twocaretcat/astro-snapshot.svg" alt="Language" title="Language">
   <a href="https://www.npmjs.com/package/astro-snapshot"><img src="https://img.shields.io/npm/v/astro-snapshot" alt="View package on npmjs" title="View package on npmjs"/></a>
-  <img src="https://img.shields.io/github/repo-size/jerboa88/astro-snapshot.svg" alt="Repository size" title="Repository size">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/jerboa88/astro-snapshot.svg" alt="Project license" title="Project license"/></a>
+  <img src="https://img.shields.io/github/repo-size/twocaretcat/astro-snapshot.svg" alt="Repository size" title="Repository size">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/twocaretcat/astro-snapshot.svg" alt="Project license" title="Project license"/></a>
 </p>
 <p class="projectDesc">
   An Astro integration for generating screenshots of your pages automatically at build time
@@ -130,19 +130,19 @@ bun add astro-snapshot
 ``` -->
 
 ```bash
-npm install github:jerboa88/astro-snapshot
+npm install github:twocaretcat/astro-snapshot
 ```
 
 ```bash
-pnpm add github:jerboa88/astro-snapshot
+pnpm add github:twocaretcat/astro-snapshot
 ```
 
 ```bash
-yarn add github:jerboa88/astro-snapshot
+yarn add github:twocaretcat/astro-snapshot
 ```
 
 ```bash
-bun add github:jerboa88/astro-snapshot
+bun add github:twocaretcat/astro-snapshot
 ```
 
 Then, apply the integration to your `astro.config.*` file using the integrations property:
@@ -535,5 +535,5 @@ I appreciate the support!
 [Open Graph]: https://ogp.me/
 [Satori]: https://github.com/vercel/satori
 [Puppeteer]: https://pptr.dev/
-[Gatsby Plugin: Component to Image]: https://github.com/jerboa88/gatsby-plugin-component-to-image
+[Gatsby Plugin: Component to Image]: https://github.com/twocaretcat/gatsby-plugin-component-to-image
 [Tally]: https://tally.johng.io/r/astro-snapshot
