@@ -1,0 +1,26 @@
+name: ❓ Other
+description: Create some other type of issue
+title: "❓ <title>"
+labels: ["⏰ new"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is an Issue Type Set?
+    description: 'Choose a type for this issue: ♻️ refactor, ✅ test, ✨ feature, 🌍 i18n, 🎨 style, 🐛 bug, 👷 ci, 💬 question, 📝 docs, 🔒 security, 🔧 build, 🗄️ epic, 🚀 performance.'
+    options:
+    - label: I've added an emoji to the issue title
+      required: true
+    - label: I've added a label to the issue
+      required: true
+- type: textarea
+  attributes:
+    label: What?
+    description: Describe what you want to do.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Why?
+    description: What problem would this solve?
+  validations:
+    required: true

@@ -1,5 +1,5 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
   - name: 💬 Question
     url: https://github.com/twocaretcat/astro-snapshot/discussions
-    about: If you have a question, please open a discussion.
+    about: Open a discussion to ask a question about the project
