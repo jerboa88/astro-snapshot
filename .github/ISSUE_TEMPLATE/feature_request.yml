@@ -1,0 +1,32 @@
+name: ✨ Feature Request
+description: Suggest an idea for this project
+title: "✨ <title>"
+labels: ["✨ feature", "⏰ new"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is This New?
+    description: Please check that this feature is not mentioned in the docs and that an issue doesn't exist already for it.
+    options:
+    - label: I have read all available documentation (ex. README.md, CONTRIBUTING.md, external docs site, etc.)
+      required: true
+    - label: I have searched for existing issues
+      required: true
+- type: textarea
+  attributes:
+    label: What?
+    description: Describe the feature you're interested in.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Why?
+    description: What problem would this feature solve?
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Alternatives
+    description: Have you considered or tried any alternative solutions/workarounds?
+  validations:
+    required: false
