@@ -1,0 +1,48 @@
+name: 🐛 Bug Report
+description: Report a problem with the project
+title: "🐛 <title>"
+labels: ["🐛 bug", "⏰ new"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is This New?
+    description: Please check that this bug is not mentioned in the README and that an issue doesn't exist already for it.
+    options:
+    - label: I have read all available documentation (ex. README.md, CONTRIBUTING.md, external docs site, etc.).
+      required: true
+    - label: I have searched for existing issues
+      required: true
+- type: input
+  attributes:
+    label: Platform
+    description: Include any details about your system that might be relevant (ex. operating system, JS runtime, browser version, etc.).
+    placeholder: "Ubuntu 22.04, Chrome 133"
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: What?
+    description: Describe the bug you're experiencing.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: How?
+    description: Give steps to reproduce the behavior.
+    placeholder: |
+      1. Go to '...'
+      2. Click on '...'
+      3. Scroll down to '...'
+      4. See error
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Logs
+    description: |
+      Please include a log file or screenshot of the issue.
+
+      > [!TIP]
+      > You can attach files by clicking this area to highlight it and then dragging files in.
+  validations:
+    required: true
