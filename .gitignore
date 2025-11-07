@@ -1,8 +1,8 @@
-# dependencies (bun install)
+# dependencies
 node_modules
 
 # output
-out
+npm
 dist
 *.tgz
 
