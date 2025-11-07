@@ -86,6 +86,7 @@ We use [Conventional Commits](https://www.conventionalcommits.org/) for clear ve
 - `chore:` Maintenance tasks
 
 Examples:
+
 ```bash
 git commit -m "feat: add support for AVIF format"
 git commit -m "fix: handle missing output directory gracefully"
@@ -93,6 +94,7 @@ git commit -m "docs: update README with new examples"
 ```
 
 For breaking changes, add a `!` after the type:
+
 ```bash
 git commit -m "feat!: change default output directory structure"
 ```
