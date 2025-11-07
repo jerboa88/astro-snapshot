@@ -33,6 +33,7 @@
 		]
 	},
 	"imports": {
+		"@deno/dnt": "jsr:@deno/dnt@^0.42.3",
 		"puppeteer": "npm:puppeteer@^24.26.1",
 		"astro": "npm:astro@^5.0.0"
 	},
