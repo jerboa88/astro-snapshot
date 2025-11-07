@@ -1,6 +1,6 @@
 import type { AstroIntegration } from 'astro';
 import type { GoToOptions, ScreenshotOptions } from 'puppeteer';
-import puppeteer from 'puppeteer';
+import type puppeteer from 'puppeteer';
 
 /**
  * Supported image output formats for screenshots.

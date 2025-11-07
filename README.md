@@ -15,13 +15,18 @@
 </div>
 
 > [!WARNING]
-> This is currently an experimental project or proof-of-concept. It may contain bugs or incomplete features, and is not intended for production use. Breaking changes may be made at any time. Consider more stable alternatives for critical applications.
+> This is currently an experimental project or proof-of-concept. It may contain bugs or incomplete features, and is not
+> intended for production use. Breaking changes may be made at any time. Consider more stable alternatives for critical
+> applications.
 
 ## 👋 About
 
-Generate screenshots of your [Astro] pages automatically at build time with **Astro Snapshot**. Perfect for creating social media images, content previews, and dynamic icons.
+Generate screenshots of your [Astro] pages automatically at build time with **Astro Snapshot**. Perfect for creating
+social media images, content previews, and dynamic icons.
 
-This integration was inspired by a similar plugin I wrote for [Gatsby] called [Gatsby Plugin: Component to Image] and [astro-selfie]. Compared to astro-selfie, this integration exposes a lot more configuration options that allow you to completely customize how images are generated.
+This integration was inspired by a similar plugin I wrote for [Gatsby] called [Gatsby Plugin: Component to Image] and
+[astro-selfie]. Compared to astro-selfie, this integration exposes a lot more configuration options that allow you to
+completely customize how images are generated.
 
 ### Features
 
@@ -44,23 +49,29 @@ This integration was inspired by a similar plugin I wrote for [Gatsby] called [G
 
 ### Use cases
 
-- **🏞️ Social images**: Use your existing front-end components to generate [Open Graph] images and/or Twitter cards for your blog posts or other content
+- **🏞️ Social images**: Use your existing front-end components to generate [Open Graph] images and/or Twitter cards for
+  your blog posts or other content
 - **Content previews**: Generate screenshots of your website for use in documentation, marketing materials
 - **🖼️ Favicons**: Dynamically generate favicons for your website
 
 ### How it works
 
 > [!IMPORTANT]
-> Note that, because this plugin runs _**after**_ the build completes, you will not be able to import the generated images into your components or perform any further operations with them in the same build cycle.
+> Note that, because this plugin runs _**after**_ the build completes, you will not be able to import the generated
+> images into your components or perform any further operations with them in the same build cycle.
 >
-> You can, however, use them in the next build, provided they are not overwritten. If you do this, make sure to account for the images not existing the first time you perform a build (i.e. use a placeholder image or catch errors from `import` statements).
+> You can, however, use them in the next build, provided they are not overwritten. If you do this, make sure to account
+> for the images not existing the first time you perform a build (i.e. use a placeholder image or catch errors from
+> `import` statements).
 
-After the Astro build completes, this plugin uses [Puppeteer] to render the pages in a headless browser and save screenshots of the rendered content as images
+After the Astro build completes, this plugin uses [Puppeteer] to render the pages in a headless browser and save
+screenshots of the rendered content as images
 
 ## 📦 Installation
 
 > [!TIP]
-> If you see any warnings like `Cannot find package 'puppeteer'` after adding the integration, your package manager may not have installed peer dependencies for you. To install these missing packages, run the following command:
+> If you see any warnings like `Cannot find package 'puppeteer'` after adding the integration, your package manager may
+> not have installed peer dependencies for you. To install these missing packages, run the following command:
 >
 > ```bash
 > npm install puppeteer
@@ -79,6 +90,7 @@ After the Astro build completes, this plugin uses [Puppeteer] to render the page
 > ```
 
 <!-- Remove this note when the package is published to NPM and JSR -->
+
 > [!NOTE]
 > The `astro add` command is not currently supported because the package is not published, but we hope to do this soon.
 
@@ -108,7 +120,8 @@ If you run into any issues, try the manual installation steps below. -->
 ### Manual
 
 > [!TIP]
-> When installing from GitHub, your package manager may not run the `prepare` script that builds the package. If you run into issues, add `astro-snapshot` to your package maanger's allow list.
+> When installing from GitHub, your package manager may not run the `prepare` script that builds the package. If you run
+> into issues, add `astro-snapshot` to your package maanger's allow list.
 
 First, install the `astro-snapshot` package using your preferred package manager.
 
@@ -171,36 +184,36 @@ import { defineConfig } from 'astro/config';
 import snapshot from 'astro-snapshot';
 
 export default defineConfig({
-  integrations: [
-    snapshot({
-      pages: {
-        // Single screenshot for homepage
-        '/': [
-          {
-            outputPath: 'public/og/home.png'
-          }
-        ],
-        // Multiple screenshots for about page (different sizes)
-        '/about': [
-          {
-            outputPath: 'public/og/about-og.png',
-            width: 1200,
-            height: 630
-          },
-          {
-            outputPath: 'public/og/about-square.jpg',
-            width: 1080,
-            height: 1080
-          },
-          {
-            outputPath: 'public/og/about-twitter.png',
-            width: 1200,
-            height: 675
-          }
-        ]
-      }
-    })
-  ]
+	integrations: [
+		snapshot({
+			pages: {
+				// Single screenshot for homepage
+				'/': [
+					{
+						outputPath: 'public/og/home.png',
+					},
+				],
+				// Multiple screenshots for about page (different sizes)
+				'/about': [
+					{
+						outputPath: 'public/og/about-og.png',
+						width: 1200,
+						height: 630,
+					},
+					{
+						outputPath: 'public/og/about-square.jpg',
+						width: 1080,
+						height: 1080,
+					},
+					{
+						outputPath: 'public/og/about-twitter.png',
+						width: 1200,
+						height: 675,
+					},
+				],
+			},
+		}),
+	],
 });
 ```
 
@@ -214,86 +227,88 @@ import { defineConfig } from 'astro/config';
 import snapshot from 'astro-snapshot';
 
 export default defineConfig({
-  integrations: [
-    snapshot({
-      // Pages to screenshot (required)
-      pages: {
-        '/': [
-          {
-            outputPath: 'public/og/home.png',
-            width: 1200,              // Viewport width (default: 1200)
-            height: 630,              // Viewport height (default: 630)
+	integrations: [
+		snapshot({
+			// Pages to screenshot (required)
+			pages: {
+				'/': [
+					{
+						outputPath: 'public/og/home.png',
+						width: 1200, // Viewport width (default: 1200)
+						height: 630, // Viewport height (default: 630)
 
-            // Puppeteer page.goto() options
-            gotoOptions: {
-              waitUntil: 'networkidle0',
-              timeout: 30000
-            },
+						// Puppeteer page.goto() options
+						gotoOptions: {
+							waitUntil: 'networkidle0',
+							timeout: 30000,
+						},
 
-            // Puppeteer page.screenshot() options
-            screenshotOptions: {
-              quality: 95,            // For jpeg only
-              fullPage: false,
-              clip: {                 // Capture specific region
-                x: 0,
-                y: 0,
-                width: 1200,
-                height: 630
-              }
-            }
-          }
-        ]
-      },
+						// Puppeteer page.screenshot() options
+						screenshotOptions: {
+							quality: 95, // For jpeg only
+							fullPage: false,
+							clip: { // Capture specific region
+								x: 0,
+								y: 0,
+								width: 1200,
+								height: 630,
+							},
+						},
+					},
+				],
+			},
 
-      // Default config for all screenshots (optional)
-      defaults: {
-        width: 1200,
-        height: 630,
-        gotoOptions: {
-          waitUntil: 'networkidle2'
-        }
-      },
+			// Default config for all screenshots (optional)
+			defaults: {
+				width: 1200,
+				height: 630,
+				gotoOptions: {
+					waitUntil: 'networkidle2',
+				},
+			},
 
-      // Port for preview server (default: 4322)
-      port: 4322,
+			// Port for preview server (default: 4322)
+			port: 4322,
 
-      // Puppeteer launch options
-      launchOptions: {
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-      }
-    })
-  ]
+			// Puppeteer launch options
+			launchOptions: {
+				headless: true,
+				args: ['--no-sandbox', '--disable-setuid-sandbox'],
+			},
+		}),
+	],
 });
 ```
 
 ### Multiple Formats for Social Media
 
 > [!TIP]
-> If you need to reference output paths in your pages, define the config in a common place and import it into your pages as needed. The integration doesn't provide any methods for getting the output paths, so you'll need to manage that yourself.
+> If you need to reference output paths in your pages, define the config in a common place and import it into your pages
+> as needed. The integration doesn't provide any methods for getting the output paths, so you'll need to manage that
+> yourself.
 
 Generate optimized images for different platforms:
 
 ```js
 // astro.config.mjs
 const socialMediaSizes = {
-  og: { width: 1200, height: 630 },         // OpenGraph
-  twitter: { width: 1200, height: 600 },    // Twitter
-  linkedin: { width: 1200, height: 627 },   // LinkedIn
-  instagram: { width: 1080, height: 1080 }  // Instagram
+	og: { width: 1200, height: 630 }, // OpenGraph
+	twitter: { width: 1200, height: 600 }, // Twitter
+	linkedin: { width: 1200, height: 627 }, // LinkedIn
+	instagram: { width: 1080, height: 1080 }, // Instagram
 };
 
 export default defineConfig({
-  integrations: [
-    snapshot({
-      pages: {
-        '/': Object.entries(socialMediaSizes).map(([platform, dims]) => ({
-          outputPath: `public/social/${platform}.png`,
-          ...dims
-        }))
-      }
-    })
-  ]
+	integrations: [
+		snapshot({
+			pages: {
+				'/': Object.entries(socialMediaSizes).map(([platform, dims]) => ({
+					outputPath: `public/social/${platform}.png`,
+					...dims,
+				})),
+			},
+		}),
+	],
 });
 ```
 
@@ -311,33 +326,33 @@ const blogPosts = await getBlogPostSlugs();
 
 // Create config for each blog post
 const blogPages = Object.fromEntries(
-  blogPosts.map(slug => [
-    `/blog/${slug}`,
-    [
-      {
-        outputPath: `public/og/blog/${slug}.png`,
-        width: 1200,
-        height: 630
-      },
-      {
-        outputPath: `public/og/blog/${slug}-square.jpg`,
-        width: 1080,
-        height: 1080
-      }
-    ]
-  ])
+	blogPosts.map((slug) => [
+		`/blog/${slug}`,
+		[
+			{
+				outputPath: `public/og/blog/${slug}.png`,
+				width: 1200,
+				height: 630,
+			},
+			{
+				outputPath: `public/og/blog/${slug}-square.jpg`,
+				width: 1080,
+				height: 1080,
+			},
+		],
+	]),
 );
 
 export default defineConfig({
-  integrations: [
-    snapshot({
-      pages: {
-        '/': [{ outputPath: 'public/og/home.png' }],
-        '/about': [{ outputPath: 'public/og/about.png' }],
-        ...blogPages
-      }
-    })
-  ]
+	integrations: [
+		snapshot({
+			pages: {
+				'/': [{ outputPath: 'public/og/home.png' }],
+				'/about': [{ outputPath: 'public/og/about.png' }],
+				...blogPages,
+			},
+		}),
+	],
 });
 ```
 
@@ -354,16 +369,18 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 const shouldGenerateScreenshots = process.env.GENERATE_SCREENSHOTS === 'true';
 
 export default defineConfig({
-  integrations: [
-    // Only add integration when needed
-    ...(shouldGenerateScreenshots || !isDevelopment ? [
-      snapshot({
-        pages: {
-          '/': [{ outputPath: 'public/og/home.png' }]
-        }
-      })
-    ] : [])
-  ]
+	integrations: [
+		// Only add integration when needed
+		...(shouldGenerateScreenshots || !isDevelopment
+			? [
+				snapshot({
+					pages: {
+						'/': [{ outputPath: 'public/og/home.png' }],
+					},
+				}),
+			]
+			: []),
+	],
 });
 ```
 
@@ -374,22 +391,22 @@ Different viewports for different purposes:
 ```js
 // astro.config.mjs
 const viewports = {
-  desktop: { width: 1920, height: 1080 },
-  tablet: { width: 768, height: 1024 },
-  mobile: { width: 375, height: 667 }
+	desktop: { width: 1920, height: 1080 },
+	tablet: { width: 768, height: 1024 },
+	mobile: { width: 375, height: 667 },
 };
 
 export default defineConfig({
-  integrations: [
-    snapshot({
-      pages: {
-        '/': Object.entries(viewports).map(([device, dims]) => ({
-          outputPath: `public/previews/${device}.png`,
-          ...dims
-        }))
-      }
-    })
-  ]
+	integrations: [
+		snapshot({
+			pages: {
+				'/': Object.entries(viewports).map(([device, dims]) => ({
+					outputPath: `public/previews/${device}.png`,
+					...dims,
+				})),
+			},
+		}),
+	],
 });
 ```
 
@@ -400,21 +417,21 @@ Handle pages with animations or lazy-loaded content:
 ```js
 // astro.config.mjs
 export default defineConfig({
-  integrations: [
-    snapshot({
-      pages: {
-        '/dashboard': [
-          {
-            outputPath: 'public/og/dashboard.png',
-            gotoOptions: {
-              waitUntil: 'networkidle0',  // Wait for all network requests
-              timeout: 60000               // Increase timeout
-            }
-          }
-        ]
-      }
-    })
-  ]
+	integrations: [
+		snapshot({
+			pages: {
+				'/dashboard': [
+					{
+						outputPath: 'public/og/dashboard.png',
+						gotoOptions: {
+							waitUntil: 'networkidle0', // Wait for all network requests
+							timeout: 60000, // Increase timeout
+						},
+					},
+				],
+			},
+		}),
+	],
 });
 ```
 
@@ -422,22 +439,22 @@ export default defineConfig({
 
 ### `SnapshotIntegrationConfig`
 
-| Property | Type | Required | Default | Description |
-|----------|------|----------|---------|-------------|
-| `pages` | `Record<string, ScreenshotConfig[]>` | ✅ | - | Map of page paths to screenshot configs |
-| `defaults` | `Partial<ScreenshotConfig>` | ❌ | `{}` | Default config for all screenshots |
-| `launchOptions` | `PuppeteerLaunchOptions` | ❌ | `{ headless: true }` | Puppeteer launch options |
-| `port` | `number` | ❌ | `4322` | Preview server port |
+| Property        | Type                                 | Required | Default              | Description                             |
+| --------------- | ------------------------------------ | -------- | -------------------- | --------------------------------------- |
+| `pages`         | `Record<string, ScreenshotConfig[]>` | ✅       | -                    | Map of page paths to screenshot configs |
+| `defaults`      | `Partial<ScreenshotConfig>`          | ❌       | `{}`                 | Default config for all screenshots      |
+| `launchOptions` | `PuppeteerLaunchOptions`             | ❌       | `{ headless: true }` | Puppeteer launch options                |
+| `port`          | `number`                             | ❌       | `4322`               | Preview server port                     |
 
 ### `ScreenshotConfig`
 
-| Property | Type | Required | Default | Description |
-|----------|------|----------|---------|-------------|
-| `outputPath` | `string` | ✅ | - | Output path with format extension |
-| `width` | `number` | ❌ | `1200` | Viewport width in pixels |
-| `height` | `number` | ❌ | `630` | Viewport height in pixels |
-| `gotoOptions` | `GoToOptions` | ❌ | `{ waitUntil: 'networkidle2' }` | Puppeteer goto options |
-| `screenshotOptions` | `ScreenshotOptions` | ❌ | `{}` | Puppeteer screenshot options |
+| Property            | Type                | Required | Default                         | Description                       |
+| ------------------- | ------------------- | -------- | ------------------------------- | --------------------------------- |
+| `outputPath`        | `string`            | ✅       | -                               | Output path with format extension |
+| `width`             | `number`            | ❌       | `1200`                          | Viewport width in pixels          |
+| `height`            | `number`            | ❌       | `630`                           | Viewport height in pixels         |
+| `gotoOptions`       | `GoToOptions`       | ❌       | `{ waitUntil: 'networkidle2' }` | Puppeteer goto options            |
+| `screenshotOptions` | `ScreenshotOptions` | ❌       | `{}`                            | Puppeteer screenshot options      |
 
 ### Supported Formats
 
@@ -462,7 +479,7 @@ On some systems, Puppeteer may need additional configuration:
 
 ```js
 launchOptions: {
-  args: ['--no-sandbox', '--disable-setuid-sandbox']
+	args: ['--no-sandbox', '--disable-setuid-sandbox'];
 }
 ```
 
@@ -480,18 +497,18 @@ Add these args for containerized environments:
 
 ```js
 launchOptions: {
-  args: [
-    '--no-sandbox',
-    '--disable-setuid-sandbox',
-    '--disable-dev-shm-usage',
-    '--disable-gpu'
-  ]
+	args: [
+		'--no-sandbox',
+		'--disable-setuid-sandbox',
+		'--disable-dev-shm-usage',
+		'--disable-gpu',
+	];
 }
 ```
 
 ## 🤝 Contributing
 
-Contributions, issues, and forks are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+Contributions, issues, and forks are welcome. See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for more details.
 
 ## 🧾 License
 
@@ -509,7 +526,8 @@ We are not affiliated with or endorsed by Astro.
 
 ### Used By
 
-- **👤 [Tally]**: A free online tool to count the number of characters, words, paragraphs, and lines in your text. **Tally** uses this integration to generate social images.
+- **👤 [Tally]**: A free online tool to count the number of characters, words, paragraphs, and lines in your text.
+  **Tally** uses this integration to generate social images.
 
 ### Alternatives
 
@@ -517,7 +535,8 @@ We are not affiliated with or endorsed by Astro.
 
 ## 💕 Funding
 
-Find this project useful? [Sponsoring me](https://johng.io/funding) will help me cover costs and **_commit_** more time to open-source.
+Find this project useful? [Sponsoring me](https://johng.io/funding) will help me cover costs and **_commit_** more time
+to open-source.
 
 If you can't donate but still want to contribute, don't worry. There are many other ways to help out, like:
 

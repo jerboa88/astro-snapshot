@@ -1,0 +1,41 @@
+{
+	"name": "@twocaretcat/astro-snapshot",
+	"version": "0.1.0",
+	"description": "Astro integration for generating screenshots of pages using Puppeteer.",
+	"license": "MIT",
+	"exports": {
+		".": "./src/index.ts",
+		"./package.json": "./deno.json"
+	},
+	"tasks": {
+		"build:npm": "deno run --allow-read --allow-write --allow-env --allow-run=npm scripts/build-npm.ts"
+	},
+	"fmt": {
+		"useTabs": true,
+		"lineWidth": 120,
+		"singleQuote": true
+	},
+	"lint": {
+		"rules": {
+			"tags": ["recommended", "jsr"]
+		}
+	},
+	"compilerOptions": {
+		"lib": ["deno.window", "dom", "dom.iterable"],
+		"strict": true
+	},
+	"publish": {
+		"include": [
+			"src/**/*.ts",
+			"README.md",
+			"LICENSE",
+			"deno.json"
+		]
+	},
+	"imports": {
+		"@deno/dnt": "jsr:@deno/dnt@^0.42.3",
+		"puppeteer": "npm:puppeteer@^24.26.1",
+		"astro": "npm:astro@^5.0.0"
+	},
+	"nodeModulesDir": "auto"
+}

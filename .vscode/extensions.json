@@ -1,4 +1,3 @@
 {
-	"recommendations": ["editorconfig.editorconfig", "esbenp.prettier-vscode"],
-	"unwantedRecommendations": []
+	"recommendations": ["editorconfig.editorconfig", "denoland.vscode-deno"]
 }

@@ -1,15 +1,10 @@
-import { preview, type AstroConfig, type AstroIntegration } from 'astro';
+import { type AstroConfig, type AstroIntegration, preview } from 'astro';
 import { launch } from 'puppeteer';
 import { fileURLToPath } from 'node:url';
 import { mkdir } from 'node:fs/promises';
-import { dirname, resolve, relative } from 'node:path';
-import type {
-	HandleBuildDone,
-	HandleConfigDone,
-	ScreenshotConfig,
-	SnapshotIntegrationConfig,
-} from './types.js';
-import { getFormat } from './utils.js';
+import { dirname, relative, resolve } from 'node:path';
+import type { HandleBuildDone, HandleConfigDone, ScreenshotConfig, SnapshotIntegrationConfig } from './types.ts';
+import { getFormat } from './utils.ts';
 
 /**
  * Creates the Astro Screenshot integration
@@ -126,15 +121,13 @@ export default function snapshot(
 
 		try {
 			for (const [pagePath, screenshotConfigs] of pageEntries) {
-				const normalizedPagePath = pagePath.startsWith('/')
-					? pagePath
-					: `/${pagePath}`;
-				const pageUrl =
-					`http://localhost:${port}${normalizedPagePath}` as const;
+				const normalizedPagePath = pagePath.startsWith('/') ? pagePath : `/${pagePath}`;
+				const pageUrl = `http://localhost:${port}${normalizedPagePath}` as const;
 
 				for (const screenshotConfig of screenshotConfigs) {
-					const { width, height, goToOptions, outputPath, screenshotOptions } =
-						resolveScreenshotConfig(screenshotConfig);
+					const { width, height, goToOptions, outputPath, screenshotOptions } = resolveScreenshotConfig(
+						screenshotConfig,
+					);
 
 					const absoluteOutputPath = resolve(rootDir, outputPath);
 
