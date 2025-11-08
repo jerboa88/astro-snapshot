@@ -34,8 +34,12 @@
 	},
 	"imports": {
 		"@deno/dnt": "jsr:@deno/dnt@^0.42.3",
+		"@semantic-release/exec": "npm:@semantic-release/exec@^7.1.0",
+		"@semantic-release/git": "npm:@semantic-release/git@^10.0.1",
+		"conventional-changelog-conventionalcommits": "npm:conventional-changelog-conventionalcommits@^9.1.0",
 		"puppeteer": "npm:puppeteer@^24.26.1",
-		"astro": "npm:astro@^5.0.0"
+		"astro": "npm:astro@^5.0.0",
+		"semantic-release": "npm:semantic-release@^24.2.9"
 	},
 	"nodeModulesDir": "auto"
 }

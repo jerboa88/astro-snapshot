@@ -1,0 +1,5 @@
+{
+	"overrides": {
+		"@semantic-release/commit-analyzer": "^11.0.0"
+	}
+}
