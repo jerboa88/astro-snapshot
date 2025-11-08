@@ -1,6 +1,6 @@
 {
   "name": "@twocaretcat/astro-snapshot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Astro integration for generating screenshots of pages using Puppeteer.",
   "license": "MIT",
   "exports": {
