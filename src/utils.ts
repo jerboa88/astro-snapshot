@@ -1,4 +1,4 @@
-import type { Format } from './types.js';
+import type { Format } from './types.ts';
 
 /**
  * Extracts and normalizes the image format from a given file path.
