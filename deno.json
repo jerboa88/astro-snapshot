@@ -7,6 +7,9 @@
     ".": "./src/index.ts",
     "./package.json": "./deno.json"
   },
+  "exclude": [
+    "npm/"
+  ],
   "tasks": {
     "build:npm": "deno run --allow-read --allow-write --allow-env --allow-run=npm scripts/build-npm.ts"
   },

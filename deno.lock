@@ -13,7 +13,8 @@
     "jsr:@ts-morph/common@0.27": "0.27.0",
     "npm:@semantic-release/exec@^7.1.0": "7.1.0_semantic-release@24.2.9__marked@15.0.12",
     "npm:@semantic-release/git@^10.0.1": "10.0.1_semantic-release@24.2.9__marked@15.0.12",
-    "npm:astro@5": "5.15.4_vite@6.4.1__picomatch@4.0.3_zod@3.25.76",
+    "npm:@types/node@*": "24.2.0",
+    "npm:astro@5": "5.15.4_@types+node@24.2.0_vite@6.4.1__@types+node@24.2.0__picomatch@4.0.3_zod@3.25.76",
     "npm:conventional-changelog-conventionalcommits@^9.1.0": "9.1.0",
     "npm:puppeteer@^24.26.1": "24.29.1_devtools-protocol@0.0.1521046",
     "npm:semantic-release@^24.2.9": "24.2.9_marked@15.0.12"
@@ -1044,7 +1045,7 @@
         "tslib"
       ]
     },
-    "astro@5.15.4_vite@6.4.1__picomatch@4.0.3_zod@3.25.76": {
+    "astro@5.15.4_@types+node@24.2.0_vite@6.4.1__@types+node@24.2.0__picomatch@4.0.3_zod@3.25.76": {
       "integrity": "sha512-0g/68hLHEJZF2nYUcZM5O0kOnzCsCIf8eA9+0jfBAxp4ycujrIHRgIOdZCFKL9GoTsn8AypWbziypH5aEIF+aA==",
       "dependencies": [
         "@astrojs/compiler",
@@ -3925,9 +3926,10 @@
         "vfile-message"
       ]
     },
-    "vite@6.4.1_picomatch@4.0.3": {
+    "vite@6.4.1_@types+node@24.2.0_picomatch@4.0.3": {
       "integrity": "sha512-+Oxm7q9hDoLMyJOYfUYBuHQo+dkAloi33apOPP56pzj+vsdJDzr+j1NISE5pyaAuKL4A3UD34qd0lx5+kfKp2g==",
       "dependencies": [
+        "@types/node",
         "esbuild",
         "fdir",
         "picomatch@4.0.3",
@@ -3938,9 +3940,12 @@
       "optionalDependencies": [
         "fsevents"
       ],
+      "optionalPeers": [
+        "@types/node"
+      ],
       "bin": true
     },
-    "vitefu@1.1.1_vite@6.4.1__picomatch@4.0.3": {
+    "vitefu@1.1.1_vite@6.4.1__@types+node@24.2.0__picomatch@4.0.3_@types+node@24.2.0": {
       "integrity": "sha512-B/Fegf3i8zh0yFbpzZ21amWzHmuNlLlmJT6n7bu5e+pCHUKQIfXSYokrqOBGEMMe9UG2sostKQF9mml/vYaWJQ==",
       "dependencies": [
         "vite"

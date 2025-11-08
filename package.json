@@ -1,5 +1,8 @@
 {
 	"overrides": {
 		"@semantic-release/commit-analyzer": "^11.0.0"
+	},
+	"peerDependencies": {
+		"astro": "^5.0.0"
 	}
 }
