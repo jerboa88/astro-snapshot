@@ -4,9 +4,15 @@
 <p class="projectBadges">
   <img src="https://johng.io/badges/category/Plugin.svg" alt="Project category" title="Project category">
   <img src="https://img.shields.io/github/languages/top/twocaretcat/astro-snapshot.svg" alt="Language" title="Language">
-  <a href="https://www.npmjs.com/package/astro-snapshot"><img src="https://img.shields.io/npm/v/astro-snapshot" alt="View package on npmjs" title="View package on npmjs"/></a>
   <img src="https://img.shields.io/github/repo-size/twocaretcat/astro-snapshot.svg" alt="Repository size" title="Repository size">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/twocaretcat/astro-snapshot.svg" alt="Project license" title="Project license"/></a>
+	<a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/semantic--release-conventionalcommits-e10079?logo=semantic-release" alt="Semantic Release" title="Semantic Release"/></a>
+</p>
+<p class="projectBadges status">
+	<a href="https://github.com/twocaretcat/astro-snapshot/releases/latest"><img src="https://img.shields.io/github/v/release/twocaretcat/astro-snapshot.svg" alt="Latest release" title="Latest release"/></a>
+	<a href="https://jsr.io/@twocaretcat/astro-snapshot"><img src="https://jsr.io/badges/@twocaretcat/astro-snapshot" alt="View package on JSR" title="View package on JSR" /></a>
+	<a href="https://jsr.io/@twocaretcat/astro-snapshot"><img src="https://jsr.io/badges/@twocaretcat/astro-snapshot/score" alt="View package on JSR" title="View package on JSR" /></a>
+	<a href="https://www.npmjs.com/package/@twocaretcat/astro-snapshot"><img src="https://img.shields.io/npm/v/@twocaretcat/astro-snapshot" alt="View package on npmjs" title="View package on npmjs"/></a>
 </p>
 <p class="projectDesc">
   An Astro integration for generating screenshots of your pages automatically at build time
@@ -51,7 +57,7 @@ completely customize how images are generated.
 
 - **🏞️ Social images**: Use your existing front-end components to generate [Open Graph] images and/or Twitter cards for
   your blog posts or other content
-- **Content previews**: Generate screenshots of your website for use in documentation, marketing materials
+- **📰 Content previews**: Generate screenshots of your website for use in documentation, marketing materials
 - **🖼️ Favicons**: Dynamically generate favicons for your website
 
 ### How it works
@@ -71,92 +77,169 @@ screenshots of the rendered content as images
 
 > [!TIP]
 > If you see any warnings like `Cannot find package 'puppeteer'` after adding the integration, your package manager may
-> not have installed peer dependencies for you. To install these missing packages, run the following command:
+> not have installed peer dependencies for you. If this happens, install Puppeteer manually like so:
 >
 > ```bash
 > npm install puppeteer
 > ```
->
-> ```bash
-> pnpm add puppeteer
-> ```
->
-> ```bash
-> yarn add puppeteer
-> ```
->
-> ```bash
-> bun add puppeteer
-> ```
 
-<!-- Remove this note when the package is published to NPM and JSR -->
+This package is available on both [JSR](https://jsr.io/@twocaretcat/astro-snapshot) and
+[npm](https://www.npmjs.com/package/@twocaretcat/astro-snapshot). It's also support the `astro add` command to update
+your `astro.config.js` automatically.
+
+### Automatic (w/ `astro add`)
 
 > [!NOTE]
-> The `astro add` command is not currently supported because the package is not published, but we hope to do this soon.
+> This grabs the package from NPM. If you want to use the JSR version, you will need to install it manually.
 
-<!-- Uncomment this section when the package is published to NPM and JSR -->
-<!-- ### Automatic
+We can use the Astro CLI to install the integration automatically using your preferred package manager:
 
-We can use the Astro CLI to install the integration automatically:
-
-```bash
-npx astro add astro-snapshot
-```
+<details>
+<summary>🦕 Deno</summary>
 
 ```bash
-pnpm astro add astro-snapshot
+deno run -A astro add astro-snapshot
 ```
 
-```bash
-yarn astro add astro-snapshot
-```
+</details>
+
+<details>
+<summary>🥖 Bun</summary>
 
 ```bash
 bunx astro add astro-snapshot
 ```
 
-If you run into any issues, try the manual installation steps below. -->
+</details>
+
+<details>
+<summary>🟢 npm</summary>
+
+```bash
+npx astro add astro-snapshot
+```
+
+</details>
+
+<details>
+<summary>🟧 pnpm</summary>
+
+```bash
+pnpm astro add astro-snapshot
+```
+
+</details>
+
+<details>
+<summary>🧶 yarn</summary>
+
+```bash
+yarn astro add astro-snapshot
+```
+
+</details>
+
+<details>
+<summary>🖇 vlt</summary>
+
+```bash
+vlt astro add astro-snapshot
+```
+
+</details>
+
+If you run into any issues, try the manual installation steps below.
 
 ### Manual
 
 > [!TIP]
-> When installing from GitHub, your package manager may not run the `prepare` script that builds the package. If you run
-> into issues, add `astro-snapshot` to your package maanger's allow list.
+> JSR has some advantages if you're using TypeScript or Deno:
+>
+> - It ships typed, modern ESM code by default
+> - No need for separate type declarations
+> - Faster, leaner installs without extraneous files
+>
+> You can use JSR with your favorite package manager.
 
-First, install the `astro-snapshot` package using your preferred package manager.
+First, install it using your preferred package manager:
 
-<!-- Uncomment this section when the package is published to NPM and JSR -->
-<!-- ```bash
-npm install astro-snapshot
+<details>
+<summary>🦕 Deno</summary>
+
+```bash
+deno add jsr:@twocaretcat/astro-snapshot     # JSR (recommended)
 ```
 
 ```bash
-pnpm add astro-snapshot
+deno add npm:@twocaretcat/astro-snapshot     # npm
+```
+
+</details>
+
+<details>
+<summary>🥖 Bun</summary>
+
+```bash
+bunx jsr add @twocaretcat/astro-snapshot     # JSR
 ```
 
 ```bash
-yarn add astro-snapshot
+bun add @twocaretcat/astro-snapshot          # npm
+```
+
+</details>
+
+<details>
+<summary>🟢 npm</summary>
+
+```bash
+npx jsr add @twocaretcat/astro-snapshot      # JSR
 ```
 
 ```bash
-bun add astro-snapshot
-``` -->
+npm install @twocaretcat/astro-snapshot      # npm
+```
+
+</details>
+
+<details>
+<summary>🟧 pnpm</summary>
 
 ```bash
-npm install github:twocaretcat/astro-snapshot
+pnpm i jsr:@twocaretcat/astro-snapshot       # JSR
 ```
 
 ```bash
-pnpm add github:twocaretcat/astro-snapshot
+pnpm add @twocaretcat/astro-snapshot         # npm
+```
+
+</details>
+
+<details>
+<summary>🧶 yarn</summary>
+
+```bash
+yarn add jsr:@twocaretcat/astro-snapshot     # JSR
 ```
 
 ```bash
-yarn add github:twocaretcat/astro-snapshot
+yarn add @twocaretcat/astro-snapshot         # npm
+```
+
+</details>
+
+<details>
+<summary>🖇 vlt</summary>
+
+```bash
+vlt install jsr:@twocaretcat/astro-snapshot  # JSR
 ```
 
 ```bash
-bun add github:twocaretcat/astro-snapshot
+vlt install @twocaretcat/astro-snapshot      # npm
 ```
+
+</details>
 
 Then, apply the integration to your `astro.config.*` file using the integrations property:
 
@@ -508,7 +591,8 @@ launchOptions: {
 
 ## 🤝 Contributing
 
-Contributions, issues, and forks are welcome. See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for more details.
+Pull requests, bug reports, feature requests, and other kinds of contributions are greatly appreciated. See
+[the contribution guide](docs/CONTRIBUTING.md) for more details.
 
 ## 🧾 License
 
