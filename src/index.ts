@@ -1,3 +1,50 @@
+/**
+ * Astro Snapshot — Automatic page screenshots during build.
+ *
+ * This integration captures screenshots of selected pages after the build
+ * completes. It starts a local preview server of the built site, navigates to
+ * each configured page using Puppeteer, and writes screenshots to the specified
+ * output paths. This is useful for generating preview thumbnails, social cards,
+ * visual regression artifacts, or documentation images directly from your site.
+ *
+ * Each page may define its own viewport size, navigation options, and
+ * screenshot settings. Shared defaults can be provided, and only pages
+ * explicitly listed in the configuration will be processed.
+ *
+ * ## Usage
+ * ```ts
+ * // astro.config.mjs
+ * import { defineConfig } from 'astro/config';
+ * import snapshot from 'astro-snapshot';
+ *
+ * export default defineConfig({
+ *   integrations: [
+ *     snapshot({
+ *       pages: {
+ *         '/': true,
+ *         '/about': {
+ *           width: 1920,
+ *           height: 1080,
+ *           outputPath: 'public/images/about-preview.png'
+ *         }
+ *       }
+ *     })
+ *   ]
+ * });
+ * ```
+ *
+ * ## How It Works
+ * - Runs after `astro build`
+ * - Starts a temporary preview server to render routes
+ * - Launches a headless Chromium instance via Puppeteer
+ * - Captures one or more screenshots per configured page
+ * - Writes resulting image files to disk
+ *
+ * To customize Chromium launch behavior, pass `launchOptions`. To adjust
+ * default screenshot behavior, use `defaults` in the integration config.
+ *
+ * @module
+ */
 import { type AstroConfig, type AstroIntegration, preview } from 'astro';
 import { launch } from 'puppeteer';
 import { fileURLToPath } from 'node:url';
